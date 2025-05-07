@@ -16,7 +16,7 @@ const displayedItems = computed(() => {
 function toggleShowMore() {
   if (showMore.value && visibleItems.value === tips.value.length) {
     showMore.value = false
-    visibleItems.value = 1
+    visibleItems.value = 2
   }
   else {
     showMore.value = true
@@ -45,7 +45,7 @@ function toggleShowMore() {
     </div>
 
     <button
-      v-if="tips.length > 1"
+      v-if="tips.length > 2"
       class="flex items-center justify-center w-full py-3 mt-4 primary-button"
       @click="toggleShowMore"
     >

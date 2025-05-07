@@ -32,8 +32,9 @@ export default defineNuxtConfig({
   },
 
   runtimeConfig: {
-    gemini_api_key: '',
-    gemini_api_host: '',
+    geminiApiKey: '',
+    geminiApiHost: '',
+    ttsApiKey: '', // used for server https://edgetts.deno.dev
   },
 
   future: {

@@ -23,12 +23,12 @@ const SceneWords = z.object({
   })),
 })
 
-const prompt = `你是一位精通中英语言的翻译官，当用户输入一个中文场景描述后需要解析该场景下可能使用到的英文 Vocabulary，根据vocabulary 给出可能会用到的Phrases，最后给出tips，用于指出在该场景使用词汇，短语时需要注意的语法格式问题，并给出示例。`
+const prompt = `你是一位精通中英语言的翻译官，当用户输入一个中文场景描述后需要解析该场景下可能使用到的英文 Vocabulary，根据vocabulary 给出可能会用到的Phrases，最后给出tips，用于指出在该场景使用词汇，短语时需要注意的语法格式问题，并给出示例，示例给出 explain。`
 
 export default eventHandler(async (event) => {
   const runtimeConfig = useRuntimeConfig()
-  const apiKey = runtimeConfig.gemini_api_key
-  const apiHost = runtimeConfig.gemini_api_host
+  const apiKey = runtimeConfig.geminiApiKey
+  const apiHost = runtimeConfig.geminiApiHost
   const body = await readBody<{ content: string }>(event)
 
   if (!body.content)
@@ -54,9 +54,6 @@ export default eventHandler(async (event) => {
         content: body.content,
       },
     ],
-    // response_format: {
-    //   type: 'json_object',
-    // },
     response_format: schema,
   })
 
