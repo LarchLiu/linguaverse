@@ -14,7 +14,7 @@ export default defineEventHandler(async (event) => {
         'Authorization': `Bearer ${apiKey}`,
       },
       body: JSON.stringify({
-        model: 'zh-CN-YunyangNeural',
+        model: 'en-US-AndrewNeural',
         input: body.words,
         voice: 'rate:-0.1|pitch:0.1',
       }),
